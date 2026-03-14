@@ -6,10 +6,51 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Todo-js</title>
 </head>
 <body>
-
+  <main>
+    <div class="todo__section">
+      <h1 class="todo__title">To Do List</h1>
+      <form class="todo__form" data-js-form>
+        <div class="todo__field field">
+          <div class="todo-new-task__section">
+            <input type="text"
+                   class="field__new-task input-task"
+                   placeholder="New task title"
+                   data-js-new-task>
+            <button class="btn btn-add">Add</button>
+          </div>
+          <div class="todo-search-task__section">
+            <input type="search"
+                   class="field__search-task input-task"
+                   placeholder="Search task"
+                   data-js-field-search
+            >
+            <button class="todo-search-btn"><img src="assets/images/Search.svg" alt="" data-js-search-task></button>
+          </div>
+        </div>
+      </form>
+      <div class="todo-tasks__section">
+        <div class="todo-description">
+          <div class="todo-total">Total Tasks: <span class="todo-counter" data-js-counter>0</span></div>
+          <div class="todo-delete" data-js-delete>Delete All</div>
+        </div>
+        <div class="todo-task-list">
+          <!--Таска-->
+          <div class="todo-item">
+            <input type="checkbox" class="todo-check" data-js-check>
+            <div class="todo-item__title" data-js-task-title>Task 1</div>
+            <span class="todo-close" data-js-task-close></span>
+          </div>
+          <!--Таска-->
+        </div>
+      </div>
+    </div>
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
