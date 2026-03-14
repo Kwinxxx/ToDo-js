@@ -42,6 +42,11 @@ input {
   outline: none;
 }
 
+::-webkit-scrollbar {
+  overflow: hidden;
+}
+
+
 .todo__section {
   display: flex;
   flex-direction: column;
@@ -79,8 +84,12 @@ input {
   border: var(--input-border);
   font-weight: 500;
   font-size: 16px;
-  color: var(--color-gray-input);
+  color: var(--color-primary);
   padding-inline: 16px;
+}
+
+.input-task::placeholder {
+  color: var(--color-gray-input);
 }
 
 .btn {
@@ -126,8 +135,15 @@ input {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-height: 70vw;
+  overflow: scroll;
 }
 
+.todo-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
 .todo-description {
   display: flex;
@@ -185,7 +201,6 @@ input {
   width: 100%;
   font-weight: 500;
   font-size: 16px;
-  color: var(--color-task-title);
 }
 
 .todo-check {
@@ -198,7 +213,29 @@ input {
   accent-color: var(--color-primary);
 }
 
+.todo-check:not(:checked) {
+
+  .todo-item__title {
+    color: var(--color-task-title);
+  }
+}
+
+.todo-check:checked {
+  & +  .todo-item__title{
+    text-decoration: line-through;
+    color: var(--color-gray-close);
+    transition: var(--transition);
+  }
+}
+
 .completed {
-  text-decoration: line-through;
-  color: var(--color-gray-close);
+
+}
+
+.todo-delete {
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition);
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" href="./assets/images/to-do-list.png" style="width: 16px; height: 16px" type="image/png">
   <title>Todo-js</title>
 </head>
 <body>
@@ -22,7 +23,7 @@
                    class="field__new-task input-task"
                    placeholder="New task title"
                    data-js-new-task>
-            <button class="btn btn-add">Add</button>
+            <button class="btn btn-add" data-js-btn-new-task>Add</button>
           </div>
           <div class="todo-search-task__section">
             <input type="search"
@@ -37,17 +38,12 @@
       <div class="todo-tasks__section">
         <div class="todo-description">
           <div class="todo-total">Total Tasks: <span class="todo-counter" data-js-counter>0</span></div>
-          <div class="todo-delete" data-js-delete>Delete All</div>
+          <div class="todo-delete" data-js-all-delete>Delete All</div>
         </div>
-        <div class="todo-task-list">
+        <ul class="todo-task-list" data-js-task-list>
           <!--Таска-->
-          <div class="todo-item">
-            <input type="checkbox" class="todo-check" data-js-check>
-            <div class="todo-item__title" data-js-task-title>Task 1</div>
-            <span class="todo-close" data-js-task-close></span>
-          </div>
           <!--Таска-->
-        </div>
+        </ul>
       </div>
     </div>
   </main>
