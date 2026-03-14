@@ -44,12 +44,6 @@ class TaskManager {
     this.storage.save(this.tasks)
   }
 
-  toggleTask(id) {
-    const completeTask = this.tasks.find((task) => task.id === id )
-    completeTask.completed = !completeTask.completed
-    this.storage.save(this.tasks)
-  }
-
   searchTask(query) {
     const filterTasks = this.tasks.filter((task) => task.title.toLowerCase().includes(query.toLowerCase()) );
     return filterTasks
